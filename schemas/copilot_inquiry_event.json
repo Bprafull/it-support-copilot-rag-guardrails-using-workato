@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ITSupportCopilotInquiryEvent",
+  "type": "object",
+  "properties": {
+    "request_id": { "type": "string", "example": "REQ-AI-1002" },
+    "source_channel": { "type": "string", "enum": ["SLACK", "TEAMS", "JSM", "SERVICENOW"], "example": "SLACK" },
+    "origin_reference_id": { "type": "string", "example": "C01234567/p1690029384" },
+    "employee_name": { "type": "string", "example": "Alex Mercer" },
+    "employee_email": { "type": "string", "format": "email", "example": "alex.mercer@company.com" },
+    "raw_question": { "type": "string", "example": "My password is Pass9988! and phone is 9972731971. How do I configure GlobalProtect VPN on my laptop?" },
+    "urgency": { "type": "string", "enum": ["Low", "Normal", "High", "Critical"] }
+  },
+  "required": ["request_id", "source_channel", "employee_email", "raw_question"]
+}
